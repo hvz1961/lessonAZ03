@@ -10,8 +10,12 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 url = "https://www.divan.ru/category/divany"
 driver.get(url)
 time.sleep(5)
+
 # Находим элементы с ценами
-price_elements = driver.find_elements(By.CLASS_NAME, 'pY3d2')
+# price_elements = driver.find_elements(By.CLASS_NAME, 'pY3d2')
+price_elements = driver.find_elements(By.CLASS_NAME, 'ui-LD-ZU.KIkOH')
+
+# price_elements = driver.find_elements(By.CLASS_NAME, 'span.KIkOH')
 
 # Извлекаем текст цен
 prices = [price.text for price in price_elements]
